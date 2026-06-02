@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jeremiah Green Portfolio</title>
+
+<style>
+
+:root{
+    --white: rgb(255,255,255);
+    --purple: rgb(112,0,255);
+    --black: rgb(20,20,20);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:var(--white);
+    color:var(--black);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    border-bottom:3px solid var(--purple);
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:bold;
+    color:var(--purple);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:var(--purple);
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.profile-pic{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid var(--purple);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+.hero h2{
+    color:var(--purple);
+    margin:15px 0;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--purple);
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.section{
+    padding:80px 10%;
+}
+
+.section h2{
+    color:var(--purple);
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(112,0,255,.1);
+    margin-bottom:20px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:15px;
+    border:4px solid var(--purple);
+}
+
+footer{
+    background:var(--purple);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">JG</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#photos">Photos</a></li>
+</ul>
+
+</nav>
+
+<section id="home" class="hero">
+
+<img
+src="images/profile.jpg"
+alt="Profile Photo"
+class="profile-pic"
+>
+
+<h1>Jeremiah Green</h1>
+
+<h2>Computer Science Student</h2>
+
+<p>
+Web Developer • Programmer • Problem Solver
+</p>
+
+<a href="#projects" class="btn">
+View Projects
+</a>
+
+</section>
+
+<section id="about" class="section">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+<p>
+
+I am a Computer Science student passionate about
+software development, web development,
+and creating modern user experiences.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="resume" class="section">
+
+<h2>Resume</h2>
+
+<div class="card">
+
+<p>
+
+Place your resume PDF in:
+
+</p>
+
+<pre>documents/Jeremiah_Green_Resume.pdf</pre>
+
+<a
+href="documents/Jeremiah_Green_Resume.pdf"
+class="btn"
+target="_blank">
+
+View Resume
+
+</a>
+
+</div>
+
+</section>
+
+<section id="projects" class="section">
+
+<h2>Projects</h2>
+
+<div class="card">
+
+<h3>Project 1</h3>
+
+<p>
+Replace this with your project description.
+</p>
+
+<a
+href="https://github.com/yourusername/project1"
+target="_blank">
+
+GitHub Repository
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Project 2</h3>
+
+<p>
+Replace this with your project description.
+</p>
+
+<a
+href="https://github.com/yourusername/project2"
+target="_blank">
+
+GitHub Repository
+
+</a>
+
+</div>
+
+</section>
+
+<section id="photos" class="section">
+
+<h2>Photo Gallery</h2>
+
+<div class="gallery">
+
+<img src="images/photo1.jpg">
+<img src="images/photo2.jpg">
+<img src="images/photo3.jpg">
+<img src="images/photo4.jpg">
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Jeremiah Green
+
+</footer>
+
+</body>
+</html>
