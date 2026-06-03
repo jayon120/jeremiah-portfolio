@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Jeremiah Green Portfolio</title>
 
 <style>
@@ -18,6 +17,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
@@ -27,6 +27,10 @@ body{
 }
 
 nav{
+    position:sticky;
+    top:0;
+    background:white;
+    z-index:1000;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -35,9 +39,9 @@ nav{
 }
 
 .logo{
+    color:var(--purple);
     font-size:2rem;
     font-weight:bold;
-    color:var(--purple);
 }
 
 nav ul{
@@ -57,21 +61,27 @@ nav a:hover{
 }
 
 .hero{
+    min-height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:80px 20px;
+    padding:40px;
 }
 
 .profile-pic{
-    width:220px;
-    height:220px;
+    width:250px;
+    height:250px;
     object-fit:cover;
     border-radius:50%;
-    border:6px solid var(--purple);
+    border:8px solid var(--purple);
     margin-bottom:25px;
+    box-shadow:0 10px 30px rgba(112,0,255,.25);
 }
 
 .hero h1{
-    font-size:3.5rem;
+    font-size:4rem;
 }
 
 .hero h2{
@@ -79,31 +89,72 @@ nav a:hover{
     margin:15px 0;
 }
 
+.hero p{
+    font-size:1.1rem;
+    max-width:700px;
+}
+
 .btn{
     display:inline-block;
+    margin-top:25px;
     background:var(--purple);
     color:white;
     text-decoration:none;
-    padding:14px 28px;
+    padding:15px 30px;
     border-radius:10px;
-    margin-top:20px;
 }
 
 .section{
     padding:80px 10%;
 }
 
-.section h2{
+.section-title{
+    font-size:3rem;
     color:var(--purple);
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .card{
     background:white;
     padding:25px;
     border-radius:15px;
+    margin-bottom:25px;
     box-shadow:0 10px 25px rgba(112,0,255,.1);
-    margin-bottom:20px;
+}
+
+.skills{
+    display:grid;
+    gap:15px;
+}
+
+.skill-bar{
+    height:12px;
+    background:#eee;
+    border-radius:10px;
+}
+
+.skill-fill{
+    height:100%;
+    background:var(--purple);
+    border-radius:10px;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.project-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(112,0,255,.1);
+}
+
+.project-card h3{
+    color:var(--purple);
+    margin-bottom:10px;
 }
 
 .gallery{
@@ -122,11 +173,29 @@ footer{
     background:var(--purple);
     color:white;
     text-align:center;
-    padding:25px;
+    padding:30px;
+    margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
 }
 
 </style>
-
 </head>
 
 <body>
@@ -148,8 +217,8 @@ footer{
 <section id="home" class="hero">
 
 <img
-src="images/profile.jpg"
-alt="Profile Photo"
+src="IMG_2288.JPG"
+alt="Jeremiah Green"
 class="profile-pic"
 >
 
@@ -169,16 +238,23 @@ View Projects
 
 <section id="about" class="section">
 
-<h2>About Me</h2>
+<h2 class="section-title">
+About Me
+</h2>
 
 <div class="card">
 
 <p>
-
 I am a Computer Science student passionate about
-software development, web development,
-and creating modern user experiences.
+software engineering, web development, programming,
+and building modern digital experiences.
+</p>
 
+<br>
+
+<p>
+This portfolio showcases my projects, skills,
+resume, and professional growth.
 </p>
 
 </div>
@@ -187,22 +263,54 @@ and creating modern user experiences.
 
 <section id="resume" class="section">
 
-<h2>Resume</h2>
+<h2 class="section-title">
+Resume
+</h2>
 
 <div class="card">
 
-<p>
+<h3>Technical Skills</h3>
 
-Place your resume PDF in:
+<br>
 
-</p>
+<div class="skills">
 
-<pre>documents/Jeremiah_Green_Resume.pdf</pre>
+<div>
+HTML
+<div class="skill-bar">
+<div class="skill-fill" style="width:95%"></div>
+</div>
+</div>
+
+<div>
+CSS
+<div class="skill-bar">
+<div class="skill-fill" style="width:90%"></div>
+</div>
+</div>
+
+<div>
+JavaScript
+<div class="skill-bar">
+<div class="skill-fill" style="width:85%"></div>
+</div>
+</div>
+
+<div>
+Python
+<div class="skill-bar">
+<div class="skill-fill" style="width:80%"></div>
+</div>
+</div>
+
+</div>
+
+<br>
 
 <a
-href="documents/Jeremiah_Green_Resume.pdf"
-class="btn"
-target="_blank">
+href="Jeremiah_Green_Resume.pdf"
+target="_blank"
+class="btn">
 
 View Resume
 
@@ -214,41 +322,74 @@ View Resume
 
 <section id="projects" class="section">
 
-<h2>Projects</h2>
+<h2 class="section-title">
+Coding Projects
+</h2>
 
-<div class="card">
+<div class="project-grid">
+
+<div class="project-card">
 
 <h3>Project 1</h3>
 
 <p>
-Replace this with your project description.
+Replace this section with your first computer science project.
 </p>
 
-<a
-href="https://github.com/yourusername/project1"
-target="_blank">
+<br>
 
-GitHub Repository
+<a
+href="https://github.com/jayon120"
+target="_blank"
+class="btn">
+
+GitHub
 
 </a>
 
 </div>
 
-<div class="card">
+<div class="project-card">
 
 <h3>Project 2</h3>
 
 <p>
-Replace this with your project description.
+Replace this section with your second project.
 </p>
 
-<a
-href="https://github.com/yourusername/project2"
-target="_blank">
+<br>
 
-GitHub Repository
+<a
+href="https://github.com/jayon120"
+target="_blank"
+class="btn">
+
+GitHub
 
 </a>
+
+</div>
+
+<div class="project-card">
+
+<h3>Project 3</h3>
+
+<p>
+Replace this section with your third project.
+</p>
+
+<br>
+
+<a
+href="https://github.com/jayon120"
+target="_blank"
+class="btn">
+
+GitHub
+
+</a>
+
+</div>
 
 </div>
 
@@ -256,14 +397,13 @@ GitHub Repository
 
 <section id="photos" class="section">
 
-<h2>Photo Gallery</h2>
+<h2 class="section-title">
+Photos
+</h2>
 
 <div class="gallery">
 
-<img src="images/photo1.jpg">
-<img src="images/photo2.jpg">
-<img src="images/photo3.jpg">
-<img src="images/photo4.jpg">
+<img src="IMG_2288.JPG" alt="Photo">
 
 </div>
 
@@ -271,7 +411,19 @@ GitHub Repository
 
 <footer>
 
+<h3>Jeremiah Green</h3>
+
+<br>
+
+<p>
+Computer Science Student • Web Developer • Programmer
+</p>
+
+<br>
+
+<p>
 © 2026 Jeremiah Green
+</p>
 
 </footer>
 
